@@ -12,7 +12,6 @@ app.controller("chatCtrl", ["$scope", "$http", "socket", function($scope, $http,
 			$scope.users.push(users[i]);
 			$scope.converstions[users[i].socketId] = [];
 		}
-		//$scope.users = response.data;
 	}, function(err) {
 		console.log(err);
 	});
@@ -22,7 +21,6 @@ app.controller("chatCtrl", ["$scope", "$http", "socket", function($scope, $http,
 		$scope.myName = username;
 		socket.emit("new user", $scope.myName);
 	}
-	//createUser(Math.random());
 
 	$scope.onSend = function() {
 		if($scope.message) {	
