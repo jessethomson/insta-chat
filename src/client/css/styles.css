@@ -1,0 +1,88 @@
+html, body, .container {
+	height: 100%;
+}
+
+body {
+	padding: 10px;
+}
+
+/*.chat-ui {
+	height: 90%;
+	padding: 10px;
+}*/
+
+.friend {
+	cursor: pointer;
+}
+
+.chat-body, .panel-body {
+	height:500px;
+	overflow-y: auto;
+}
+
+.my-text {
+	border-radius: 12px;
+	text-align: right;
+	background: lightblue;
+}
+
+.their-text {
+	border-radius: 12px;
+	background: lightgreen;
+}
+
+.panel-title {
+	text-align: center;
+	font-weight: bold;
+	font-size: 20pt !important;
+}
+
+.chat-line {
+	width: 100%;
+	padding: 10px;
+}
+/** { 
+	margin: 0; 
+	padding: 0; 
+	box-sizing: border-box; 
+}
+
+body { 
+	font: 13px Helvetica, Arial;
+}
+
+form { 
+	background: #000; 
+	padding: 3px; 
+	position: fixed; 
+	bottom: 0; 
+	width: 100%; 
+}
+
+form input {
+	border: 0; 
+	padding: 10px; 
+	width: 90%; 
+	margin-right: .5%; 
+}
+
+form button { 
+	width: 9%; 
+	background: rgb(130, 224, 255); 
+	border: none; 
+	padding: 10px; 
+}
+
+#messages {
+	list-style-type: none; 
+	margin: 0; 
+	padding: 0; 
+}
+
+#messages li { 
+	padding: 5px 10px; 
+}
+
+#messages li:nth-child(odd) {
+	background: #eee; 
+}*/
