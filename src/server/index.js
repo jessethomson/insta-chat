@@ -47,6 +47,7 @@ io.on("connection", function(socket) {
 
 });
 
-http.listen(3500, function(){
-  console.log('listening on *:3500');
+var port = 3000;
+http.listen(port, function(){
+  console.log('listening on *:' + port);
 });
