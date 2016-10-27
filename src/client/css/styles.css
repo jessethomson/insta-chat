@@ -41,6 +41,17 @@ body {
 	width: 100%;
 	padding: 10px;
 }
+
+.username-title {
+	font-weight: bold;
+	color: #5960a6;
+	font-family: serif, Helvetica, sans-serif;
+}
+
+.panel-body {
+	background-color: #cae2e4;
+}
+
 /** { 
 	margin: 0; 
 	padding: 0; 

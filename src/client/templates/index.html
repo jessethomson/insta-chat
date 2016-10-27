@@ -8,11 +8,14 @@
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="/js/app.js" type="text/javascript" charset="utf-8"></script>
 </head>
-<body ng-app="myApp">
+<body ng-app="myApp" style="background-color:lightgrey">
+<div>
+	<img src="logo.png" height="100" width="400">
+</div>
 <div ng-controller="chatCtrl" class="container">
 	<div class="row">
 		<div class="col-sm-4">
-			Username: {{ myName }}
+			<h2 class="username-title">Username: {{ myName }}</h2>
 		</div>
 	</div>
 	<div class="col-sm-4">
@@ -25,7 +28,7 @@
 			<div class="panel-body">
 				<ul class="list-group">
 					<li ng-hide="user == me" ng-click="selectFriend(user)" class="list-group-item friend" ng-repeat="user in users track by $index">
-						{{ user.name }}
+						<strong>{{ user.name }}</strong>
 					</li>
 					<div ng-hide="users.length" style="text-align: center;">
 						No One Online
