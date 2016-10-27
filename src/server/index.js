@@ -8,7 +8,7 @@ app.use(express.static(__dirname + "/../client/"));
 
 var users = [];
 
-app.get('/', function(req, res){
+app.get('/insta-chat', function(req, res){
   res.sendFile(path.join(__dirname + "/../client/templates/index.html"));
 });
 
