@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<title>Instant Messenger</title>
+	<title>Insta Chat</title>
 	<link rel="stylesheet" type="text/css" href="/css/styles.css">
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 	<script src="/js/angular.min.js" type="text/javascript"></script>
@@ -9,9 +9,6 @@
 	<script src="/js/app.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body ng-app="myApp" style="background-color:lightgrey">
-<!-- <div>
-	<img src="logo.png" height="100" width="400">
-</div> -->
 <div ng-controller="chatCtrl" class="container">
 	<div class="row">
 		<div class="col-sm-4">
@@ -23,7 +20,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-sm-4">
+	<div class="col-sm-4" ng-show="myName">
 		<div class="panel panel-default">		
 			<div class="panel-heading">
 				<div class="panel-title">
