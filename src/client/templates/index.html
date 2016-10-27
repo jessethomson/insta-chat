@@ -9,13 +9,18 @@
 	<script src="/js/app.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body ng-app="myApp" style="background-color:lightgrey">
-<div>
+<!-- <div>
 	<img src="logo.png" height="100" width="400">
-</div>
+</div> -->
 <div ng-controller="chatCtrl" class="container">
 	<div class="row">
 		<div class="col-sm-4">
-			<h2 class="username-title">Username: {{ myName }}</h2>
+			<img style="margin: 10px;margin-bottom: 20px;" src="logo.png" height="100" width="400">
+		</div>
+		<div class="col-sm-8" ng-show="myName">
+			<div style="text-align: right;">
+				<h2 class="username-title">Username: {{ myName }}</h2>
+			</div>
 		</div>
 	</div>
 	<div class="col-sm-4">
@@ -28,7 +33,7 @@
 			<div class="panel-body">
 				<ul class="list-group">
 					<li ng-hide="user == me" ng-click="selectFriend(user)" class="list-group-item friend" ng-repeat="user in users track by $index">
-						<strong>{{ user.name }}</strong>
+						<strong>{{ user.name }}</strong> <span class="badge">{{ unreads[user.socketId] }}</span>
 					</li>
 					<div ng-hide="users.length" style="text-align: center;">
 						No One Online
@@ -37,7 +42,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="chat-ui col-sm-8" style="height: 100%;">
+	<div class="chat-ui col-sm-8" style="height: 70%;">
 		<div ng-show="selectedFriend" class="panel panel-default panel-primary">
 			<div class="panel-heading chat-heading">
 				<div class="panel-title">
@@ -66,7 +71,7 @@
 			<div style="text-align: center;position:absolute;top: 50%;">
 			
 				<form class="input-group" ng-submit="registerUser(username)">
-					<input class="form-control" placeholder="username" ng-model="username" autocomplete="off"/>
+					<input class="form-control" placeholder="Username" ng-model="username" autocomplete="off"/>
 					<span class="btn btn-primary input-group-addon" ng-click="registerUser(username)">Join Chat</span>
 				</form>
 			</div>

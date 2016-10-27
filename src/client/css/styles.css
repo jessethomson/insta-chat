@@ -1,9 +1,13 @@
-html, body, .container {
+html, body {
 	height: 100%;
 }
 
 body {
 	padding: 10px;
+}
+
+.container {
+	height: 80%;
 }
 
 /*.chat-ui {
@@ -16,7 +20,7 @@ body {
 }
 
 .chat-body, .panel-body {
-	height:500px;
+	height:400px;
 	overflow-y: auto;
 }
 

@@ -4,6 +4,7 @@ app.controller("chatCtrl", ["$scope", "$http", "socket", function($scope, $http,
 
 	$scope.converstions = {};
 	$scope.users = [];
+	$scope.unreads = {};
 
 	// load user
 	$http.get("/users").then(function(response) {
@@ -17,7 +18,6 @@ app.controller("chatCtrl", ["$scope", "$http", "socket", function($scope, $http,
 	});
 
 	$scope.registerUser = function(username) {
-		console.log("username: " + username)
 		$scope.myName = username;
 		socket.emit("new user", $scope.myName);
 	}
@@ -41,6 +41,7 @@ app.controller("chatCtrl", ["$scope", "$http", "socket", function($scope, $http,
 			$scope.converstions[friend.socketId] = [];
 		}
 		$scope.currentConversation = $scope.converstions[friend.socketId];
+		$scope.unreads[friend.socketId] = undefined;
 	}
 
 	socket.on("chat message", function(data) {
@@ -51,6 +52,12 @@ app.controller("chatCtrl", ["$scope", "$http", "socket", function($scope, $http,
 		// if it's to me
 		else if(data.to === $scope.me.socketId) {
 			$scope.converstions[data.from].push(data);
+			if($scope.converstions[data.from] != $scope.currentConversation) {
+				if(!$scope.unreads[data.from]) {
+					$scope.unreads[data.from] = 0;
+				}
+				$scope.unreads[data.from] += 1;
+			}
 		}
 	});
 
