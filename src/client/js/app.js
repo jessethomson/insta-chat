@@ -30,8 +30,10 @@ app.controller("chatCtrl", ["$scope", "$http", "socket", function($scope, $http,
 				to: $scope.selectedFriend.socketId
 			});
 			$scope.message = "";
-			var objDiv = document.getElementById("chat-box");
-			objDiv.scrollTop = objDiv.scrollHeight;
+			// setTimeout(function() {
+			// 	var objDiv = document.getElementById("chat-box");
+			// 	objDiv.scrollTop = objDiv.scrollHeight;
+			// }, 250);
 		}
 	}
 
@@ -42,12 +44,18 @@ app.controller("chatCtrl", ["$scope", "$http", "socket", function($scope, $http,
 		}
 		$scope.currentConversation = $scope.converstions[friend.socketId];
 		$scope.unreads[friend.socketId] = undefined;
+		var objDiv = document.getElementById("chat-box");
+		objDiv.scrollTop = objDiv.scrollHeight;
 	}
 
 	socket.on("chat message", function(data) {
 		// if it's from me
 		if(data.from === $scope.me.socketId) {
 			$scope.converstions[data.to].push(data);
+			setTimeout(function() {
+				var objDiv = document.getElementById("chat-box");
+				objDiv.scrollTop = objDiv.scrollHeight;
+			}, 250);
 		}
 		// if it's to me
 		else if(data.to === $scope.me.socketId) {
@@ -58,6 +66,10 @@ app.controller("chatCtrl", ["$scope", "$http", "socket", function($scope, $http,
 				}
 				$scope.unreads[data.from] += 1;
 			}
+			setTimeout(function() {
+				var objDiv = document.getElementById("chat-box");
+				objDiv.scrollTop = objDiv.scrollHeight;
+			}, 250);
 		}
 	});
 

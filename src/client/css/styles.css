@@ -19,7 +19,7 @@ body {
 	cursor: pointer;
 }
 
-.chat-body, .panel-body {
+.panel-body {
 	height:400px;
 	overflow-y: auto;
 }

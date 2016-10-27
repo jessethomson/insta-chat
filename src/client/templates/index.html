@@ -46,7 +46,7 @@
 					{{selectedFriend.name}}
 				</div>
 			</div>
-			<div id="chat-box" class="panel-body .chat-body">	
+			<div id="chat-box" style="height:300px;" class="panel-body .chat-body">	
 				<div ng-repeat="data in currentConversation track by $index">
 					<label class="chat-line" ng-class="{'my-text': data.from == me.socketId, 'their-text': data.from != me.socketId}">{{data.msg}}</label>
 				</div>
